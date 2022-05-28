@@ -49,13 +49,13 @@ public class CategoriaController {
 	}
 
 	@DeleteMapping
-	public ResponseEntity<String> deleteCategoria(Categoria categoria) {
+	public ResponseEntity<String> deleteCategoria(@PathVariable Categoria categoria) {
 		categoriaService.deleteCategoria(categoria);
 		return new ResponseEntity<>("", HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteCategoriaById(Integer id) {
+	public ResponseEntity<String> deleteCategoriaById(@PathVariable Integer id) {
 		categoriaService.deleteCategoriaById(id);
 		return new ResponseEntity<>("", HttpStatus.OK);
 	}

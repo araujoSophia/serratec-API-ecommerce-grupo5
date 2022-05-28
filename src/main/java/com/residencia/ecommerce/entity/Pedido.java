@@ -2,12 +2,7 @@ package com.residencia.ecommerce.entity;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -21,30 +16,23 @@ public class Pedido {
 	@Column(name = "id_pedido")
 	private Integer idPedido;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "data_pedido")
 	private Date dataPedido;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Column(name = "data_entrega")
 	private Date dataEntrega;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "data_envio")
 	private Date dataEnvio;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "status")
 	private Boolean status;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_cliente")
-	private Integer idCliente;
+	// Descomentar essas linhas e seus getters e setters quanto a classe cliente for implementada
+//	@ManyToOne
+//	@JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
+//	private Cliente cliente;
 
 	public Integer getIdPedido() {
 		return idPedido;
@@ -86,12 +74,11 @@ public class Pedido {
 		this.status = status;
 	}
 
-	public Integer getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
-	}
-
+//	public Cliente getCliente() {
+//		return cliente;
+//	}
+//
+//	public void setCliente(Cliente cliente) {
+//		this.cliente = cliente;
+//	}
 }

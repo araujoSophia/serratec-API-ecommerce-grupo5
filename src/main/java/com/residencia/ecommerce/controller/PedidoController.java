@@ -49,13 +49,13 @@ public class PedidoController {
 	}
 
 	@DeleteMapping
-	public ResponseEntity<String> deletePedido(Pedido pedido) {
+	public ResponseEntity<String> deletePedido(@RequestBody Pedido pedido) {
 		pedidoService.deletePedido(pedido);
 		return new ResponseEntity<>("", HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deletePedidoById(Integer id) {
+	public ResponseEntity<String> deletePedidoById(@PathVariable Integer id) {
 		pedidoService.deletePedidoById(id);
 		return new ResponseEntity<>("", HttpStatus.OK);
 	}

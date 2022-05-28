@@ -19,13 +19,9 @@ public class Categoria {
 	@Column(name = "id_categoria")
 	private Integer idCategoria;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "nome")
 	private String nomeCategoria;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "descricao")
 	private String descricaoCategoria;
 
